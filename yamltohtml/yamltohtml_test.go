@@ -1,11 +1,21 @@
 package yamltohtml
 
-import "testing"
+import (
+	"fmt"
+	"os"
+	"testing"
+)
 
 type TestCase struct {
 	desc     string
 	path     string
 	expected string
+}
+
+func TestMain(m *testing.M) {
+	ret := m.Run()
+	fmt.Println("Tests have executed")
+	os.Exit(ret)
 }
 
 func TestYamlToHtml(t *testing.T) {
